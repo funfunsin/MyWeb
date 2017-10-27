@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        #thing {
+            width: 400px;
+            height: 400px;
+            background-color: indigo;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+    <form>
+        <input id="Button1" type="button" value="登入系統" />
+        <hr />
+        <fieldset style="width:230px">
+            <legend>登入系統</legend>
+            <table>
+                <tr>
+                    <td>帳號</td>
+                    <td>
+                        <input id="Text1" type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>密碼</td>
+                    <td>
+                        <input id="Password1" type="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><input id="Button1" type="submit" value="登入" /></td>
+                    <td><input id="Reset1" type="reset" value="取消" /></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+    <span id="btn">aaaaa</span>
+    <div id="thing">
+
+    </div>
+
+
+
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script>
+
+        $('fieldset').hide();
+
+        $('#Button1').click(function () {
+            $('fieldset').fadeIn(1000);
+        });
+
+        $('#Reset1').click(function () {
+            $('fieldset').fadeOut(1000);
+        });
+
+
+        $('#btn').click(function () {
+            $('#thing').fadeToggle(1000);
+
+        });
+
+
+        function fadeShow() {
+
+            var n = Math.random();
+            $('#thing').fadeTo(300, n);
+            setTimeout("fadeShow()", "300");
+        }
+        fadeShow();
+    </script>
+</body>
+</html>

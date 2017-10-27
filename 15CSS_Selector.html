@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<!--三大選擇器: 優先權:1.先比精緻度id(#)>class(.)>tag 2.相同精緻度再比順序,後面會蓋掉前面寫的程式碼-->
+<!--tag HTNL element-->
+<!--class 類別-->
+<!--id 唯一識別(物件不能取相同的id名稱,但網頁自由度很高,因此取錯了還是有機會可顯示...)-->
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+
+    <!--style太多時,可獨力拉出建立樣式表,避免head太龐大-->
+    <link href="MyStyle.css" rel="stylesheet" />
+
+</head>
+<body>
+    <h1 style="font-size:12pt;color:aquamarine">hello1</h1>
+    <h1 style="font-size:12pt;color:aquamarine">hello2</h1>
+    <h1 style="font-size:12pt;color:aquamarine">hello3</h1>
+    <h1 style="font-size:12pt;color:aquamarine">hello4</h1>
+    <h1 style="font-size:12pt;color:aquamarine">hello5</h1>
+    <h1 style="font-size:12pt;color:aquamarine">hello6</h1>
+
+    <hr />
+
+    <h1>hello1</h1>
+    <h1 class="h1">hello2</h1>
+    <h1>hello3</h1>
+    <h1 class="h1">hello4</h1>
+    <h1>hello5</h1>
+    <h1 id="h1">hello6</h1>
+
+</body>
+</html>

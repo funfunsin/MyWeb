@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <!--為了有好的架構性,不建議將函數寫在這-->
+    <!--<input id="Button1" type="button" value="我要玩終極密碼" onclick="MyGame()"/>-->
+
+    <input id="Button1" type="button" value="我要玩終極密碼" />
+    <br />
+    <hr />
+    請輸入半徑<input id="Text1" type="text" />
+    <input id="Button2" type="button" value="計算圓面積" />
+    <h3 id="ans1"></h3>
+    <br />
+    <hr />
+    請輸入長<input id="Text2" type="text" />
+    請輸入寬<input id="Text3" type="text" />
+    <input id="Button3" type="button" value="計算矩形面積" />
+    <h3 id="ans2"></h3>
+
+    <script>
+        var btn = document.getElementById("Button1");
+        btn.addEventListener("click", MyGame);
+
+        var btn2 = document.getElementById("Button2");
+        btn2.addEventListener("click", getCircleArea);
+
+        var btn3 = document.getElementById("Button3");
+        btn3.addEventListener("click", getRectArea);
+
+        function MyGame() {
+            var ans = Math.floor(Math.random() * 99) + 1;
+            var num;
+            var intMax = 100, intMin = 0;
+
+            while (true) {
+                num = window.prompt("終極密碼 請輸入" + intMin + "~" + intMax + "的數字", "");
+
+                if (num == null) {
+                    alert("您已取消遊戲");
+                    break;
+                }
+
+                //為了避免num在prompt輸入時隱含轉換成字串 因此將num-0確保轉為數字
+                if (num - 0 >= intMax || num - 0 <= intMin || isNaN(num)) {
+                    alert("您輸入的值範圍錯誤");
+                    continue;
+                }
+
+                if (num == ans) {
+                    alert("碰!猜中終極密碼!!");
+                    break;
+                }
+
+                if (num > ans) intMax = num;
+                if (num < ans) intMin = num;
+            }
+        }
+
+        function getCircleArea()
+        {
+            var r = document.getElementById("Text1").value;
+            CArea = Math.PI * r * r;
+            document.getElementById("ans1").innerText = CArea;
+
+            //document.write("半徑" + r + "的圓面積為" + CArea);
+        }
+
+        function getRectArea() {
+            var w = document.getElementById("Text2").value;
+            var h = document.getElementById("Text3").value;
+            RArea = w * h;
+            document.getElementById("ans2").innerText = RArea;
+
+        }
+
+    </script>
+
+
+</body>
+</html>

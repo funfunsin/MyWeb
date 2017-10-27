@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        //Math.random()會隨機傳回0~1之間的浮點數，但並不包含1
+        //Math.floor() 取小於這個數的最大整數
+        var ans = Math.floor(Math.random() * 99) + 1;
+        var num;
+        var intMax = 100, intMin = 0;
+
+        while (true)
+        {
+            num = window.prompt("終極密碼 請輸入" + intMin + "~" + intMax + "的數字", "");
+
+            if (num == null)
+            {
+                alert("您已取消遊戲");
+                break;
+            }
+
+            //為了避免num在prompt輸入時隱含轉換成字串 因此將num-0確保轉為數字
+            if (num - 0 >= intMax || num - 0 <= intMin  || isNaN(num))  
+            {
+                alert("您輸入的值範圍錯誤");
+                continue;
+            }
+
+            if (num == ans)
+            {
+                alert("碰!猜中終極密碼!!");
+                break;                
+            }
+
+            if (num > ans) intMax = num;
+            if (num < ans) intMin = num;
+                
+        }
+
+    </script>
+
+</body>
+</html>

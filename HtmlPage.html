@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>home page</title>
+	<meta charset="utf-8" />
+    <style>
+        .h:hover{
+            background-color:yellow;
+        }
+        b:hover{
+            font-size:48pt;
+            color:red;
+            
+        }
+
+    </style>
+
+</head>
+<body>
+    <b>This is my homepage!</b>
+    
+    <h1 class="h">This is my homepage!</h1>
+    <h2 class="h">This is my homepage!</h2>
+    <h3 class="h">This is my homepage!</h3>
+    <h4 class="h">This is my homepage!</h4>
+    <h5 class="h">This is my homepage!</h5>
+    <h6 class="h">This is my homepage!</h6>
+    <!--p 段落標籤-->
+    <p>
+        這裡是一個段落!
+    </p>
+
+    <script>
+        for (i = 1; i <= 100; i++) {
+            for (j = 1; j <= 6; j++) document.write("<h" + j + " class='h'>This is my homepage!</h" + j + ">");
+        }
+    </script>
+
+</body>
+</html>

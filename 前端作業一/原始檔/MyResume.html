@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <style>
+        #inf {
+            margin: auto;
+            font-family: 微軟正黑體;
+            background-color:#faf0f5;
+            border:2px solid black;
+            border-spacing:2px;        }
+        #inf caption {
+            font-size:30px;
+            font-weight:900;
+            text-shadow:3px 2px 1px #808080;
+        }
+        #inf thead,tfoot th {
+            background-color:#a40c52;
+            color:white;
+        }
+        #inf tbody th {
+            background-color:#f89ccc;
+        }
+        #inf tbody>tr:hover {
+            background-color:rgba(90,0,255,0.1);
+        }
+
+        #link {
+            cursor:move;
+        }
+        a:visited {
+            color:white;
+        }
+        a:hover {
+            color:#108793;
+            font-weight:900;
+        }
+        a:active {
+            color:aquamarine;
+        }
+
+    </style>
+</head>
+<body style="background-color:#e7f1fb">
+
+    <table id="inf">
+        <caption>My Resume</caption>
+        <thead>
+            <th colspan="5">個人資料</th>
+        </thead>
+
+        <tbody>
+            <tr height="30px">
+                <th>姓名:</th>
+                <td>方宜馨</td>
+                <th>性別:</th>
+                <td>女</td>
+                <td rowspan="3">
+                    <img src="mypohto.jpg" height="90"/>
+                </td>
+            </tr>
+            <tr height="30px">
+                <th>生日:</th>
+                <td>1991/05/30</td>
+                <th>年齡:</th>
+                <td>26</td>
+            </tr>
+            <tr height="30px">
+                <th>行動電話:</th>
+                <td>0912-123123</td>
+                <th>e-mail:</th>
+                <td>esinfang@gmail.com</td>
+            </tr>
+            <tr height="30px">
+                <th>聯絡地址:</th>
+                <td colspan="4">600 嘉義市台林街100號10巷10樓之1</td>
+            </tr>
+            <tr height="30px">
+                <th>個人特質:</th>
+                <td colspan="4">勇於嘗試、學習新事物,處事圓融</td>
+            </tr>
+            <tr>
+                <th>專長:</th>
+                <td colspan="4">
+                    <ul>
+                        <li>前端網頁設計:HTML,CSS,JavaScript</li>
+                        <li>Android APP開發</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+        <th colspan="5">
+            <a id="link" href="https://tw.linkedin.com/">前往個人Linkedin</a>
+        </th>
+        </tfoot>
+    </table>
+
+
+    <hr style="background-color:#26087d;height:3px;width:600px"/>
+
+
+</body>
+</html>

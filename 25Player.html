@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="25playerStyle.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <audio id="audio">
+        <source id="s" src="music\guitar.mp3" type="audio/mpeg" title="張震嶽-破吉他" />
+    </audio>
+
+    <div id="conPanel">
+        <select id="music">
+            <option value="music\guitar.mp3">張震嶽-破吉他</option>
+            <option value="music\lovesong.mp3">小小戀歌</option>
+            <option value="music\Shape Of You.mp3">Ed Sheeran-Shape Of You</option>
+        </select>
+
+        <hr />
+
+        <span id="play">4</span>
+        <span id="stop"><</span>
+        <span id="prevsong">9</span>
+        <span id="prevtime">7</span>
+        <span id="nexttime">8</span>
+
+        <span id="nextsong">:</span>
+        <span id="muted">V</span>
+        <span id="loop">q</span>
+        <span id="allloop">`</span>
+        <span id="random">s</span>
+
+        <br /><br />
+
+        <div id="settime">
+            <div id="progress"></div>
+        </div>
+
+        <hr />
+
+        <label for="vol">Volume：</label>
+        <input id="vol" type="range" max="100" min="0" value="50" />
+        
+        <hr />
+
+        <div id="bottom">
+            <div id="duration">
+                00:00/00:00
+            </div>
+            <span id="info2"></span>
+            <marquee id="info" width="100%">請按播放鍵~!!</marquee>
+        </div>
+    </div>
+
+    <h3>顯示歌曲曲目清單</h3>
+    <ul id="songList"></ul>
+    <h4>儲存我的播放清單</h4>
+
+    <script src="25playerJS.js"></script>
+
+    <script>
+        var h3 = document.getElementsByTagName("h3")[0];
+        var songList = document.getElementById("songList");
+        var h4 = document.getElementsByTagName("h4")[0];
+        h3.addEventListener("click", getSongList);
+        h4.addEventListener("click", ChangeMyMusic);
+
+        function getSongList() {
+            var li;
+            var txt;
+            for (i = 0; i < music.options.length; i++) {
+                li = document.createElement("li");
+                txt = document.createTextNode(music.options[i].innerText);
+                li.appendChild(txt);
+                li.title = music.options[i].value;
+                songList.appendChild(li);
+
+                li.addEventListener("click", function () {
+                    songList.removeChild(event.target);
+                })
+            }
+        }
+
+        function ChangeMyMusic() {
+
+            for (i = music.options.length-1; i >=0 ; i--) {
+                music.removeChild(music.options[i]);
+            }
+
+            var opt, txt;
+
+            for (i = 0; i < songList.children.length ; i++) {
+
+                //DOM的操作寫法
+                //opt = document.createElement("option");
+                //txt = document.createTextNode(songList.children[i].innerText);
+                //opt.value = songList.children[i].title;
+                //opt.appendChild(txt);
+                //music.appendChild(opt);
+
+                //利用Option物件
+                opt = new Option(songList.children[i].innerText, songList.children[i].title);
+
+                music.appendChild(opt);
+
+            }
+            music.options[0].selected = true;
+        }
+
+    </script>
+</body>
+</html>

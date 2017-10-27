@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    
+    <!--自動縮排-->
+        <p style="text-indent:24pt;font-size:12pt">台北股市今日有13檔個股除權息，開盤指數蒸發16.9點，多頭攻勢暫時熄火，呈現狹盤震盪的走勢，股王大立光今日表現開高後一路穩步走高，成為盤面支柱，終場台股小拉尾盤收高，上漲23.72點，為10481.26點，漲幅0.23%，成交值959.55億元。上櫃指數收在137.99點，漲1.09點，漲幅0.8%。分析師表示，明日為月期權結算日，由選擇權來看，最大未平倉量為10400點，是否將壓低結算，宜多加注意。近日台股來到6月底向下跳空缺口位置，由於美國經濟數據轉佳，加上科技股財報週登場，台股後市猶有表現空間。</p>
+
+    請輸入字的大小:<input id="Text1" type="text"/><input id="button1" onclick="sizechange()" type="button" value="送出"/>
+
+    <p style="text-indent:24pt;font-size:12pt">台北股市今日有13檔個股除權息，開盤指數蒸發16.9點，多頭攻勢暫時熄火，呈現狹盤震盪的走勢，股王大立光今日表現開高後一路穩步走高，成為盤面支柱，終場台股小拉尾盤收高，上漲23.72點，為10481.26點，漲幅0.23%，成交值959.55億元。上櫃指數收在137.99點，漲1.09點，漲幅0.8%。分析師表示，明日為月期權結算日，由選擇權來看，最大未平倉量為10400點，是否將壓低結算，宜多加注意。近日台股來到6月底向下跳空缺口位置，由於美國經濟數據轉佳，加上科技股財報週登場，台股後市猶有表現空間。</p>
+
+    <script>
+        function sizechange() {
+            var p = document.getElementsByTagName("p")[1];
+            var size = document.getElementById("Text1").value;
+            p.style.fontSize = size + "pt";
+            p.style.textIndent = size * 2 + "pt";
+            }
+    </script>
+
+    <!--cursor游標樣式-->
+    <h2 style="font-size:12pt;text-decoration:underline; cursor:help; color:blue">台北股市今日有13檔個股除權息</h2>
+
+    <!--陰影shadow:右 下 柔邊 顏色    陰影是可重疊的-->
+    <h1 style="font:72pt 'Arial Black';text-shadow:5px 5px 1px #808080">this is my homepage!</h1>
+    <h1 style="font:72pt 'Arial Black';text-shadow:5px 5px 1px #808080,10px 10px 5px #ffd800">this is my homepage!</h1>
+
+</body>
+</html>

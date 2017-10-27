@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+
+<!--body的作用範圍是整個網頁 CSS若屬性相衝突是以"精緻度高(範圍小)"為主-->
+<body style="background-color:antiquewhite">
+    <!--h1的顏色設定是一整行的-->
+    <h1 style="color:palevioletred;background-color:aquamarine">this is my homeapge(h1)</h1>
+
+    <!--網頁內的文字最好都用屬性語法框起來-->
+    <!--span只套用在文字-->
+    <span style="color:palevioletred;background-color:aquamarine">this is my homeapge(span)</span>
+
+    <div style="width:500px;height:400px;color:palevioletred;background-color:rgb(200,200,200)">
+        this is my homeapge(div)
+    </div>
+    <!--rgba可調整透明度-->
+    <div style="width:500px;height:400px;color:palevioletred;background-color:rgba(200,200,200,0.5)">
+        this is my homeapge(div)
+    </div>
+
+    <!--漸層色-->
+    <h1 style="background:-webkit-linear-gradient(90deg,#f6b3b3,#f16d6d)">this is my homeapge(h1)</h1>
+    <div style="width:500px;height:400px;background:radial-gradient(ellipse,#ff0000,#f16d6d)">
+        this is my homeapge(div)
+    </div>
+
+    <!--可能會有些指令只能某些瀏覽器執行-->
+    <h1 style="background:-moz-linear-gradient(180deg,#ff6a00,#f6ecec)">This is My Homepage</h1>
+    <h1 style="background:-o-linear-gradient(180deg,#ff6a00,#f6ecec)">This is My Homepage</h1>
+    <h1 style="background:-webkit-linear-gradient(180deg,#ff6a00,#f6ecec)">This is My Homepage</h1>
+    <h1 style="background:-ms-linear-gradient(180deg,#ff6a00,#f6ecec)">This is My Homepage</h1>
+
+</body>
+</html>

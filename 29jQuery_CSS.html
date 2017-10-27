@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+      /*div{
+          border:5px  dotted red;
+          color:white;
+          background-color:#0026ff;
+          font-size:36pt;
+          text-align:center;
+      }*/
+    </style>
+    
+</head>
+<body>
+    <input id="Button1" type="button" value="button" />
+   <h1>
+       歡迎光臨我的夜總會
+   </h1>
+
+  
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script>
+
+        //var btn = document.getElementById("Button1");
+        //var h1 = document.getElementsByTagName("h1")[0];
+
+        //    h1.style.border = "5px double red";
+        //    h1.style.color = "white";
+        //    h1.style.backgroundColor = "#0026ff";
+        //    h1.style.fontSize = "36pt";
+        //    h1.style.textAlign = "center";
+
+
+
+        //btn.addEventListener('click', function () {
+          
+        //    h1.style.color = "pink";
+          
+
+        //});
+
+        $('#Button1').click(function () {
+            setPink();
+   
+        });
+
+       
+            $('h1').css({
+                'border': '5px double red',
+                'color': 'white',
+                'background-color': '#0026ff',
+                'font-size': '36pt',
+                'text-align': 'center'
+            });
+
+
+            function setPink() {
+                $('h1').css({
+                    'border': '10px dotted yellow',
+                    'color': 'pink',
+                    'background-color': 'black'
+                });
+
+                setTimeout("setWhite()", "200");
+                
+            }
+
+            function setWhite() {
+                $('h1').css({
+                    'border': '5px double red',
+                    'color': 'white',
+                    'background-color': '#0026ff'
+                });
+
+                setTimeout("setPink()", "200");
+            }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿body {
+}
+         #conPanel{
+            width:400px;
+            border:10px solid #5c5c5c;
+            box-shadow:8px 8px 8px black;
+            text-align:center;
+            margin:auto;
+        }
+        #conPanel>span{
+            font-family:Webdings;
+            font-size:24pt;
+            cursor:pointer;
+            box-shadow:4px 4px 3px black;
+        }
+        #vol{
+            width:300px;
+       
+        }
+        #progress{
+            background-color:#4800ff;
+            height:5px;
+            width:0;
+
+        }
+        #settime{
+            background-color:lightgray;
+            height:5px;
+            cursor:pointer;
+        }

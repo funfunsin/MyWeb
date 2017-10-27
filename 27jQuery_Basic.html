@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        .yellow{
+            background-color:yellow;
+        }
+        .red{
+            background-color:red;
+        }
+
+
+        /*#list li:nth-child(2n+1){
+            background-color:yellow;
+        }
+        #list li:nth-child(2n){
+            background-color:red;
+        }*/
+    </style>
+    
+</head>
+<body>
+    <input id="Button1" type="button" value="button" />
+    <ul id="list">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+        <li>eee</li>
+
+    </ul>
+  
+
+
+  
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script>
+        //$('#Button1').click(function () {
+        //    $('#list li:nth-child(2n+1)').addClass('yellow');
+        //    $('#list li:nth-child(2n)').addClass('red');
+        //});
+
+
+        var Button1 = document.getElementById("Button1");
+        var list = document.getElementById("list");
+
+     
+        Button1.addEventListener('click', function () {
+            for (i = 0; i < list.children.length; i++) {
+                if (i % 2 == 0)
+                    list.children[i].className = "yellow";
+                else
+                    list.children[i].className = "red";
+            }
+
+        });
+
+     
+
+
+    </script>
+</body>
+</html>

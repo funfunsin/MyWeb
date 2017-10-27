@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <p>您還可以輸入<span id="counter"></span>個字</p>
+    <textarea id="memo" rows="6" cols="20" maxlength="10"></textarea>
+
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script>
+        var maxChar = 10;
+        $('#counter').text(maxChar);
+
+        $('#memo').keyup(function(){
+            var msg =maxChar-$(this).val().length;
+
+            //alert(maxChar - msg);
+            $('#counter').text(msg);
+            //alert(msg);
+        });
+
+    </script>
+</body>
+</html>

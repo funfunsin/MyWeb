@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+    
+        .line{
+            border:1px solid;
+            cursor:pointer;
+        }
+     
+
+       .large{
+           font-size:36pt;
+       }
+   .small{
+           font-size:8pt;
+       }
+   .smaller{
+           font-size:6pt;
+       }
+       .larger{
+           font-size:48pt;
+       }
+       .selected{
+           font-weight:900;
+           background-color:#ffd800;
+       }
+       h4{
+           cursor:pointer;
+       }
+    </style>
+    
+</head>
+<body>
+   
+    <div id="switcher">
+        <span id="smaller">更小</span>
+        <span id="small">縮小</span>
+        <span id="default">標準</span>
+        <span id="large">放大</span>
+        <span id="larger">更大</span>
+    </div>
+    <p>高屏澎東分署</p>
+    <h4>廢除武功</h4>
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script>
+        $('#switcher span').addClass('line');
+
+        $('#switcher span').click(function () {
+            var id = event.target.id;
+            //alert(event.target.id);
+            $('p').removeClass().addClass(id);
+            $('#switcher span').removeClass('selected');
+            $(event.target).addClass('selected');
+
+        })
+
+        $('h4').click(function () {
+            $('#switcher span').off('click');
+        });
+    </script>
+</body>
+</html>

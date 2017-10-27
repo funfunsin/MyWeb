@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+
+    <style>
+        #container {
+            width: 500px;
+            position: relative;
+        }
+
+        #menu {
+            /*border:2px solid red;*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 50px;
+        }
+
+        #menu, .submenu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            #menu li {
+                background-color:#fb89d9;
+                float: left;
+                border-right: 1px solid white;
+            }
+
+            #menu a {
+                color: white;
+                text-decoration: none;
+                padding: 10px;
+                width: 120px;
+                display: block;
+            }
+
+            #menu li ul {
+                width: 120px;
+            }
+
+            #menu a:hover {
+                background-color: #fb178e;
+            }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="menu">
+            <li>
+                <a href="#">產品</a>
+                <ul class="submenu">
+                    <li><a href="#">ASP.net</a></li>
+                    <li><a href="#">jQuery</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">服務</a>
+                <ul class="submenu">
+                    <li><a href="#">線上客服</a></li>
+                    <li><a href="#">檔案下載</a></li>
+                    <li><a href="#">資料查詢</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">查詢</a>
+                <ul class="submenu">
+                    <li><a href="#">訂單查詢</a></li>
+                    <li><a href="#">歷史訂單</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $('.submenu').hide();
+        $('#menu li').hover(function () {
+            $(this).find('ul').slideDown(300);
+        }, function () {
+            $(this).find('ul').slideUp(300);
+        });
+    </script>
+
+
+</body>
+</html>

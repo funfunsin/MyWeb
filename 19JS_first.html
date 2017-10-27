@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <input id="txt1" type="text" />
+    <input id="txt2" type="text" />
+
+    <h1 id="showTime"></h1>
+
+    <!--JS不需宣告即可使用變數-->
+    <!--JS的三大型態布林(Boolean)、數值(Number)和字串(String)-->
+    <script>
+        
+        //name = window.prompt("請輸入您的姓名:", "");
+        //document.write("Hello " + name);
+
+        //document.write("hello world!!");
+        //window.alert("hello world!");
+
+        //window.alert("歡迎光臨!!您的螢幕解析度為" + screen.width + "*" + screen.height);
+
+        //avail為有效寬高,若使用IE並把狀態列顯示,有效寬高則為扣掉狀態列範圍之寬高
+        //window.alert(name + "歡迎光臨!!您的螢幕解析度為" + screen.availWidth + "*" + screen.availHeight);
+
+        document.onmousemove = mycoordinate;
+        function mycoordinate(evnt)
+        {
+            txt1.value = evnt.pageX;
+            txt2.value = evnt.pageY;
+        }
+
+        function showMyTime()
+        {
+            var myDay = new Date();
+            h = myDay.getHours();  //0~23
+            m = myDay.getMinutes();  //0~59
+            s = myDay.getSeconds();  //0~59
+
+            //為了美觀<10 前面補0
+            if (h < 10) h = "0" + h;
+            if (m < 10) m = "0" + m;
+            if (s < 10) s = "0" + s;
+
+            //在h標籤內放文字用innerText
+            showTime.innerText = "現在時間是" + h + ":" + m + ":" + s;
+
+            setTimeout("showMyTime()", 1000);
+        }
+
+        showMyTime();
+    </script>
+
+</body>
+</html>

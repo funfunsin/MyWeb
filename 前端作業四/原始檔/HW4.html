@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <style>
+        #show {
+            cursor: pointer;
+        }
+        .line {
+            border: 1px solid;
+            cursor: pointer;
+        }
+        .large {
+            font-size: 36pt;
+        }
+        .small {
+            font-size: 8pt;
+        }
+
+        .selected {
+            font-weight: 900;
+            background-color: #fc1494;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="show">顯示功能按鈕</h2>
+    <div id="select">
+        <span id="large">放大</span>
+        <span id="default">還原</span>
+        <span id="small">縮小</span>
+    </div>
+
+    <p>Hello jQuery!!!!</p>
+
+
+    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+    <script>
+        $('#select span').addClass('line');
+
+        $('#select').hide();
+        $('#show').click(function () {
+            $('#select').toggle(1000, function () {
+                if ($(this).is(':hidden')) {
+                    $('#show').text('顯示功能按鈕');
+                }
+                else {
+                    $('#show').text('隱藏功能按鈕');
+                }
+            });
+        });
+
+        $('#small').bind('click', function () {
+            $('p').removeClass().addClass('small');
+            $('#select span').removeClass('selected');
+            $(this).addClass('selected');
+        });
+
+
+        $('#default').bind('click', removeC);
+        function removeC() {
+            $('p').removeClass();
+            $('#select span').removeClass('selected');
+            $('#default').addClass('selected');
+        }
+
+        $('#large').click(function () {
+            $('p').removeClass().addClass('large');
+            $('#select span').removeClass('selected');
+            $(this).addClass('selected');
+        });
+    </script>
+
+</body>
+</html>

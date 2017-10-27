@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+
+    <script>
+        var myTime = 13;
+        document.write("現在時間為:");
+        if (myTime < 12)
+            document.write(myTime + " am");
+        else if (myTime > 12)
+            document.write((myTime - 12) + " pm");
+        else
+            document.write(myTime + " am");
+
+        ///////////////////////////////////////
+        document.write("<hr>");
+
+        var strH;
+        var numH;
+
+        //if的另一種變形寫法
+        strH = (myTime > 12) ? "pm" : "am";
+        numH = (myTime > 12) ? (myTime - 12) : myTime;
+        document.write("現在時間為:" + numH + " " + strH);
+
+        ///////////////////////////////////////
+        document.write("<hr>");
+
+        var level = "A";
+        switch (level) {
+            case "A":
+                document.write("甲等");
+                break;
+            case "B":
+                document.write("乙等");
+                break;
+            case "C":
+                document.write("丙等");
+                break;
+            case "D":
+                document.write("丁等");
+                break;
+            default:
+                document.write("沒等");
+                break;
+        }
+
+        ///////////////////////////////////////
+        document.write("<hr>");
+
+        for (j = 0; j < 3; j++) {
+            for (i = 1; i <= 6; i++)
+                document.write("<h" + i + ">勞動部勞動力發展署高屏澎東分署</h" + i + ">");
+        }
+
+        //////////////////////////////////////
+        for (j = 1; j <= 5; j++) {
+            for (i = 1; i <= j; i++)
+                document.write("*");
+            document.write("<br>");
+        }
+
+        ///////////////////////
+        ///單迴圈寫法///
+        j = 5;
+        star = "";
+        for (i = 0; i < j;i++)
+        {
+            star+="*";
+            document.write(star + "<br>");
+        }
+        ///////////////////////
+
+
+        for (i = 10; i <= 50; i += 4)
+            document.write("<span style='font-size:" + i + "pt'>勞動部勞動力發展署高屏澎東分署</span>");
+
+        //////////////////////
+
+        var a = 1;
+        while (a <= 6) {
+            document.write("<h" + a + ">勞動部勞動力發展署高屏澎東分署</h" + a + ">");
+
+            a++;
+        }
+
+        ////////////////////
+        a = 1;
+        do {
+            document.write("<h" + a + ">勞動部勞動力發展署高屏澎東分署</h" + a + ">");
+            a++;
+        } while (a <= 6)
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h1>DOM-Document Object Model</h1>
+
+
+    <table id="myTable" border="1" width="200" height="200">
+        <tr>
+            <td>aaa</td>
+            <td>bbb</td>
+        </tr>
+        <tr>
+            <td>ccc</td>
+            <td>ddd</td>
+        </tr>
+        <tr>
+            <td>eee</td>
+            <td>fff</td>
+        </tr>
+
+    </table>
+    <hr />
+
+    <div id="myDIV">
+        <p onclick="appendNode()">第一段</p>
+        <p>第二段</p>
+        <p>第三段</p>
+        
+    </div>
+
+    <script>
+        var myDIV = document.getElementById("myDIV");
+
+        //var pTag = myDIV.getElementsByTagName("p");
+        //alert(pTag[0].nodeName)
+        //pTag[0].addEventListener('click', appendNode);
+
+        function appendNode() {
+            var p = document.createElement("p");
+            //p.innerText = "第四段";
+            var txt = document.createTextNode("第四段");
+
+            p.appendChild(txt);
+
+            myDIV.appendChild(p);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        var myTable = document.getElementById("myTable");
+        //alert(typeof (myTable));
+        //myTable.width = "1000";
+        
+        //alert(myTable.children[0].children[0].children[0].nextElementSibling.textContent);
+
+        //alert(myTable.children[0].children[0].parentElement.children[0].nextElementSibling.nextElementSibling.children[0].nextElementSibling.textContent);
+        //alert(myTable.children[0].children[1].nodeName);
+        //alert(myTable.children[0].children[2].nodeName);
+      
+        
+        //alert(myTable.childNodes.length);
+
+    </script>
+
+</body>
+</html>

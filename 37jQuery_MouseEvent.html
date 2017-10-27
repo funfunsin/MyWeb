@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        #drink {
+            width: 300px;
+            cursor: pointer;
+        }
+            #drink h2 {
+                font-family: 微軟正黑體;
+                font-weight: 900;
+                text-align: center;
+            }
+
+            #drink p {
+                font-family: 微軟正黑體;
+                font-weight: 900;
+            }
+
+            #drink h4 {
+                font-family: Arial;
+                font-weight: 900;
+                color: #ff2b0d;
+                text-decoration: line-through;
+            }
+
+            #drink h3 {
+                font-family: Arial;
+                font-weight: 900;
+                color: #ff2b0d;
+            }
+        #product div:last-child{
+           font-family:Arial;
+           font-weight:900;
+           border:3px solid red;
+           background-color:#ff6a00;
+            color:white;
+            width:100px;
+         text-align:center;
+       }
+        #drink div {
+            font-family: Arial;
+            font-weight: 900;
+            border: 3px solid red;
+            background-color: #ff6a00;
+            color: white;
+            width: 100px;
+            text-align: center;
+        }
+        .hover{
+            border:3px dotted red;
+        }
+        .hover2 {
+            border: 3px double green;
+        }
+        .down{
+            border:10px double #0026ff;
+            background-color:#b6ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="drink">
+        <img src="images/Cappuccino.jpg" width="250" />
+        <h2>卡布奇諾</h2>
+        <p>融合濃縮咖啡及現蒸牛奶，加上豐厚細緻的奶泡，呈現醇厚咖啡風味。</p>
+        <h4>原價:$120</h4><h3>特價:$110</h3>
+        <div>放入餐盤</div>
+    </div>
+
+
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script>
+        $('#drink').hover(function () {
+            $(this).removeClass().addClass('hover');
+        }, function () {
+            $(this).removeClass().addClass('hover2');
+        });
+
+        $('#drink').mouseenter(function () {
+            $(this).removeClass().addClass('hover');
+        });
+        $('#drink').mouseleave(function () {
+            $(this).removeClass().addClass('hover2');
+        });
+
+        $('#drink').mousedown(function () {
+            $(this).removeClass().addClass('down');
+        });
+        $('#drink').mouseup(function () {
+            $('#drink div:first-child').hide(700, function () {
+                $('#drink div:last-child').text('已放入餐盤');
+            });
+        });
+    </script>
+
+</body>
+</html>

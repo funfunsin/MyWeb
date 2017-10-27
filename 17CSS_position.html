@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        #main {
+            width:770px;
+            margin:auto;
+            /*border:5px solid;*/
+        }
+        #top {
+            /*height:150px;*/
+            background-color:#f798ef;
+        }
+        #left {
+            /*height: 600px;*/
+            width: 210px;
+            float: left;
+            background-color:#ed3eb4;
+        }
+        #right {
+            /*height: 600px;*/
+            width: 560px;
+            float: right;
+            background-color: #f77a42;
+        }
+        #bottom {
+            height:80px;
+            background-color:gray;
+            /*clear將浮動的設定清除*/
+            clear:both;
+        }
+        #bottom > h6 {
+            text-align: center;
+            line-height: 80px;
+        }
+
+        #ad1 {
+            /*relative是相對於上一個物件*/
+            /*position:relative;*/
+            /*top:10px;*/
+
+            /*absolute是指整個網頁的絕對位置*/
+            position:absolute;
+            top:10px;
+        }
+        #ad2 {
+            /*fixed是指網頁"視窗大小"的絕對位置*/
+            position:fixed;
+            top:10px;
+            right:10px;
+        }
+
+        #ad3 {
+            /*若想要讓廣告置中*/
+            position:absolute;
+            top:10px;
+            /*left:500px;*/
+
+            /*margin只在相對位置時有用 position若為absolute無效*/
+            /*但無法相對網頁視窗置中,因此用JaveScript撰寫設定*/
+        }
+
+            #ad3 > span {
+                background-color:lightblue;
+                color:blue;
+                font-size:10pt;
+                cursor:pointer;
+            }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <img src="images/top.jpg" />
+        </div>
+        <div id="left">
+            <img src="images/left.jpg" />
+        </div>
+        <div id="right">
+            <img src="images/right.jpg" />
+        </div>
+        <div id="bottom">
+            <!--特殊字元 前& 後; -->
+            <h6>Copyright &copy; 2017 My WebSite </h6>
+        </div>
+    </div>
+
+    <img src="images/banner1.jpg" id="ad1"/>
+    <img src="images/banner2.jpg" id="ad2"/>
+    <div id="ad3">
+        <span>點我關閉</span></br>
+        <img src="images/ad.jpg" />
+    </div>
+    
+    <script>
+
+        //事件驅動的寫法:
+        //var ad3 = document.getElementById("ad3"); //用利id抓取元素,id為ad3
+        //var w = ad3.clientWidth; //抓ad3的寬度
+        //var w2 = document.body.clientWidth; //抓body(瀏覽器)的寬度
+        //var left = (w2 - w) / 2; //計算left應留寬度
+        //ad3.style.left = left + "px"; //將寬度塞給ad3的CSSleft屬性
+        //但因非響應式網頁,因此調整網頁視窗後(事件驅動)得重新整理,才會重新計算置中位置
+
+
+        //
+        function re() {
+            var ad3 = document.getElementById("ad3"); //用利id抓取元素,id為ad3
+            var w = ad3.clientWidth; //抓ad3的寬度
+            var w2 = document.body.clientWidth; //抓body(瀏覽器)的寬度
+            var left = (w2 - w) / 2; //計算left應留寬度
+            ad3.style.left = left + "px"; //將寬度塞給ad3的CSSleft屬性
+        }
+
+        window.onresize = re; //當瀏覽器的size改變
+        window.onload = re;   //當載入瀏覽器時
+
+
+
+        //點我關閉
+        ad3.childNodes[1].addEventListener('click',function(){
+            ad3.hidden=true;
+        });
+
+    </script>
+
+</body>
+</html>

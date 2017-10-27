@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .line {
+            border: 1px solid;
+            cursor: pointer;
+        }
+
+
+        .large {
+            font-size: 36pt;
+        }
+
+        .small {
+            font-size: 8pt;
+        }
+
+        .larger {
+            font-size: 48pt;
+        }
+
+        .selected {
+            font-weight: 900;
+            background-color: #ffd800;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="switcher">
+        <span id="small">縮小</span>
+        <span id="default">標準</span>
+        <span id="large">放大</span>
+        <span id="larger">更大</span>
+    </div>
+    <p>高屏澎東分署</p>
+
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script>
+        $('#switcher span').addClass('line');
+
+        $('#small').bind('click', function () {
+            $('p').removeClass().addClass('small');
+            $('#switcher span').removeClass('selected');
+            $(this).addClass('selected');
+        });
+
+
+        $('#default').bind('click', removeC);
+        function removeC() {
+            $('p').removeClass();
+            $('#switcher span').removeClass('selected');
+            $('#default').addClass('selected');
+        }
+
+        $('#large').click(function () {
+            $('p').removeClass().addClass('large');
+            $('#switcher span').removeClass('selected');
+            $(this).addClass('selected');
+        });
+
+        $('#larger').click(larger);
+
+        function larger() {
+            $('p').removeClass().addClass('larger');
+            $('#switcher span').removeClass('selected');
+            $('#larger').addClass('selected');
+        }
+    </script>
+</body>
+</html>

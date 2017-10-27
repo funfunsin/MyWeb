@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+
+        <form>
+            <div class="form-group">
+                <!--在label裡下 for="email" 讓網頁上點選到email文字,也會把指標focus到input(Text)裡-->
+                <label for="email">E-mail：</label>
+                <!--placeholder是input(Text)裡灰色的建議填寫值-->
+                <input id="email" type="text" class="form-control" placeholder="exsample@wda.gov.tw" />
+            </div>
+
+            <div class="form-group">
+                <label for="pwd">Password：</label>
+                <input id="pwd" type="text" class="form-control" />
+            </div>
+
+            <input id="Submit1" type="submit" value="登入" class="btn btn-primary" />
+
+        </form> 
+    </div>
+
+
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>

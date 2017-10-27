@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <h2 id="h2"></h2>
+    <div id="NewArea"></div>
+
+    <script>
+        function showTime() {
+            var myDay = new Date();
+
+            var y = myDay.getFullYear() - 1911; //取完整西元年
+            var m = myDay.getMonth() + 1; // 範圍0~11
+            var d = myDay.getDate(); // 範圍1~31
+            var w = myDay.getDay(); //取星期幾,範圍0~6
+
+            var h = myDay.getHours(); //0~23;
+            var mm = myDay.getMinutes(); //0~59
+            var s = myDay.getSeconds(); //0~59
+            if (h < 10) h = "0" + h;
+            if (mm < 10) mm = "0" + mm;
+            if (s < 10) s = "0" + s;
+            var weekday = new Array("日", "一", "二", "三", "四", "五", "六");
+
+            var today = "中華民國" + y + "年" + m + "月" + d + "日 星期" + weekday[w] + " " + h + ":" + mm + ":" + s;
+            document.getElementById("h2").innerText = today;
+
+            setTimeout("showTime()", 1000);
+        }
+        showTime();
+
+        //alert(m);
+
+
+        //打字機效果!
+        var news = "氣象局表示，第16號颱風外圍環流影響，易有短時強降雨，今天宜蘭及花蓮地區有局部大雨或豪雨，基隆北海岸、台東、屏東地區及新北山區有局部大雨發生的機率，請注意雷擊、強陣風及溪水暴漲。";
+        var newsArea=document.getElementById("NewArea");
+        var words = news.length;
+        var counter = 0;
+
+        function showNews() {
+            counter++;
+            newsArea.innerText = news.substr(0, counter);
+
+            if(counter<=words)
+                setTimeout("showNews()",100);
+        }
+
+        showNews();
+
+    </script>
+
+</body>
+</html>

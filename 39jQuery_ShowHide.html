@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+       #ShowNews{
+           cursor:pointer;
+       }
+       #News{
+           border:2px solid red;
+       }
+    </style>
+    
+</head>
+<body>
+   <h2 id="ShowNews">顯示</h2>
+
+    <div id="News">
+        （中央社記者顏伶如波特蘭27日專電）美國西南航空公司26日從巴爾的摩飛往洛杉磯的班機上，一名婦人聲稱「對寵物有致命過敏」，要求驅離機上兩隻小狗。由於婦人無法出示醫師證明，後來遭航警拖行下機。
+
+        福斯新聞網（Foxs News）地方電視台Fox5報導，西南航空公司（Southwest Airlines）主管指出，這名婦人登機後，看到客艙內有兩隻小狗，便要求空服員將小狗驅離下機，理由是她「對寵物有致命過敏」。航空公司表示，其中一隻是乘客的寵物小狗，另外一隻則是專門為身心障礙人士服務的情緒治療犬。
+
+        西南航空公司表示，根據公司內部規定，乘客若有致命風險的健康狀況，飛航途中可能出現生死關頭狀況，例如具有致命危險的嚴重過敏，就可能會被拒絕登機，因此當空服人員對這名婦人說明規定之後，要求她自行下機，但這名婦人卻聲稱她的「父親開刀」無法更改航班，堅持兩隻小狗必須離開機艙，空服人員只好通報航警。
+    </div>
+
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script>
+        //show() & hide()
+
+        $('#News').hide();
+        $('#ShowNews').click(function () {
+            //call back function
+            //用旗標判斷的寫法
+            //if ($('#ShowNews').text() == '顯示') {
+            //    $('#News').show(2500, function () {
+            //        $('#ShowNews').text('隱藏');
+            //    });
+            //}
+            //else {
+            //    $('#News').hide(1500, function () {
+            //        $('#ShowNews').text('顯示');
+            //    });
+            //}
+
+            //用toggle的寫法
+            $('#News').toggle(2500, function () {
+                if ($(this).is(':hidden')) {
+                    $('#ShowNews').text('顯示');
+                    //alert('hidden');
+                }
+                else {
+                    $('#ShowNews').text('隱藏');
+                    //alert('show');
+                }
+            });
+            
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        #main {
+            /*border:5px groove gray;*/
+            width: 610px;
+            margin: auto;
+            position: relative;
+        }
+
+        #pica {
+            position: absolute;
+            /*left:300px; top:400px;*/
+            left: 300px;
+            top: -400px;
+            z-index: 50;
+        }
+
+        #bg {
+            position: absolute;
+            top: 90px;
+            z-index: 100;
+        }
+
+        #title {
+            position: absolute;
+            left: -600px;
+            font-family: Quixley LET;
+            font-size: 36pt;
+            opacity: 0;
+        }
+
+        #ball {
+            position: absolute;
+            top: 700px;
+            left: -300px;
+            width: 50px;
+            cursor: pointer;
+        }
+
+        #ding {
+            position: absolute;
+            top: 450px;
+            left: 80px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="main">
+        <h1 id="title">Welcome Pokemon Go Game WebPage</h1>
+
+        <img src="images/pokemonBG.png" id="bg" />
+        <img src="images/ball.gif" id="ball" />
+        <img src="images/pica.gif" id="pica" width="200" />
+        <img src="images/ding.gif" id="ding" width="200" />
+
+    </div>
+
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script>
+        $('#bg').hide();
+        $('#ball').hide();
+        $('#ding').hide();
+        //$('#pica').hide();
+        //$('#title').hide();
+        $('#bg').fadeIn(1500, function () {
+            $('#ball').show().animate({ 'left': '550px', 'top': '50px' }, 1000, function () {
+                $('#ding').fadeIn(300).fadeOut(200).fadeIn(300).fadeOut(200).fadeIn(300).fadeOut(200).fadeIn(500);
+                $('#pica').animate({ 'top': '400px' }, 800).animate({ 'width': '40px' }, 300).animate({ 'width': '400px' }, 300).animate({ 'width': '40px' }, 300).animate({ 'width': '400px' }, 300);
+            })
+
+        });
+        var titleLeft=($('#main').width() - $('#title').width()) / 2;
+        $('#title').animate({ 'left': titleLeft + 'px','opacity':'1'},1000);
+        $('#ball').hover(function () {
+            $(this).animate({'width': '168px'});
+        });
+
+
+
+    </script>
+</body>
+</html>
