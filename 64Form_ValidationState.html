@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+    <style>
+      
+      
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="well">
+            <form class="form-horizontal container">
+                <div class="form-group has-feedback">
+                    <label for="email" class="col-md-3 control-label">E-mail：</label>
+                    <div class="col-md-9">
+                        <input id="email" type="text" class="form-control" placeholder="exsample@wda.gov.tw" />
+                        <span class="form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="pwd" class="col-md-3 control-label">Password：</label>
+                    <div class="col-md-9">
+                        <input id="pwd" type="password" class="form-control" />
+                        <span class="form-control-feedback"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-9 col-md-offset-3">
+                        <div class="checkbox">
+                            <label><input id="Checkbox1" type="checkbox" data-title="請勾選同意才能繼續" data-toggle="tooltip" />我同意</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-9 col-md-offset-3">
+                        <input id="Submit1" type="submit" value="登入" class="btn btn-primary" />
+                        <input id="Reset1" type="reset" value="重設" class="btn btn-success" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr />
+    
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script>
+        $('#email').keyup(function () {
+            var email_regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if ($(this).val().length > 0 && email_regex.test($(this).val()))
+                StateChange(true, '#email');
+            else
+                StateChange(false, '#email');
+        });
+
+        $('#pwd').keyup(function () {
+            if ($(this).val().length >= 8)
+                StateChange(true, '#pwd');
+            else
+                StateChange(false,'#pwd');
+        });
+
+        function StateChange(state, objID) {
+            if (state) {
+                $(objID).parent().parent().removeClass('has-error').addClass('has-success');
+                $(objID).siblings().removeClass('glyphicon glyphicon-remove').addClass('glyphicon glyphicon-ok');
+            }
+            else {
+                $(objID).parent().parent().removeClass('has-success').addClass('has-error');
+                $(objID).siblings().removeClass('glyphicon glyphicon-ok').addClass('glyphicon glyphicon-remove');
+            }
+        }
+
+        $('form').submit(function () {
+
+            if(!$('#Checkbox1').is(':checked'))
+            {
+                $('#Checkbox1[data-toggle="tooltip"]').tooltip('show');
+                return false;
+            }
+            
+        });
+
+    </script>
+</body>
+</html>

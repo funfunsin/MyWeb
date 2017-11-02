@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+    <style>
+      
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glyphicon glyphicon-headphones"></h1>
+        <span class="glyphicon glyphicon-headphones"></span>
+        <p class="btn btn-primary glyphicon glyphicon-headphones"></p>
+        <p class="btn btn-default glyphicon glyphicon-headphones"></p>
+        <input id="Button1" type="button" value="button" class="btn btn-default glyphicon glyphicon-save-file" />
+        <button id="Button1" class="btn btn-default glyphicon glyphicon-search"> Search</button>
+        <button id="Button1" class="btn btn-default"> Search</button>
+        <button id="Button1" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>Search</button>
+        <button id="Button1" class="btn btn-default glyphicon"><span class="glyphicon-search"></span>Search</button>
+        <hr />
+        <h2 id="show" class="glyphicon glyphicon-eye-close"></h2>
+        <br />
+        <img id="pica" src="pica.gif" />
+    </div>
+    
+    
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script>
+        $('#show').click(function () {
+            if ($('#pica').is(':hidden')) {
+                $('#pica').show(800);
+                $(this).removeClass('glyphicon-eye-open').addClass('glyphicon-eye-close');
+            }
+            else {
+                $('#pica').hide(800);
+                $(this).removeClass('glyphicon-eye-close').addClass('glyphicon-eye-open');
+            }
+        });
+
+    </script>
+</body>
+</html>
