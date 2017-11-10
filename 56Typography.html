@@ -1,21 +1,22 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
     <link href="Content/MyStyle.css" rel="stylesheet" />
     <style>
-      
-      
+
+
     </style>
 </head>
 <body>
     <div class="container">
+
 
         <h1 class="text-center HeaderFontColoer">Right Now & Right Here <small>Keren Ann</small></h1>
         <p class="lead">
@@ -23,9 +24,9 @@
             Head on my shoulder, I'll pour myself a glass
             Wait 'til we're somewhere closer to a lake
             Then make a sad face.............
-            </p>
+        </p>
 
-            <p>
+        <p>
             Over and over, you wanted it so fast
             Head on my shoulder, I'll pour myself a glass
             Wait 'til we're somewhere closer to a lake
@@ -129,7 +130,8 @@
 
         <hr />
 
-        <h1>h1. Bootstrap Heading
+        <h1>
+            h1. Bootstrap Heading
             <span class="small">sub title</span>
         </h1>
         <h2>h2. Bootstrap Heading</h2>
@@ -138,9 +140,12 @@
         <h5>h5. Bootstrap Heading</h5>
         <h5>h6. Bootstrap Heading</h5>
 
-        <p class="h1">h1. Bootstrap Heading
-            <small>sub title</small></p>
-        <p class="h2">h2. Bootstrap Heading
+        <p class="h1">
+            h1. Bootstrap Heading
+            <small>sub title</small>
+        </p>
+        <p class="h2">
+            h2. Bootstrap Heading
             <small>sub title</small>
         </p>
         <p class="h3">h3. Bootstrap Heading</p>
@@ -149,7 +154,59 @@
         <p class="h6">h6. Bootstrap Heading</p>
 
         <span class="h1">h1. Bootstrap Heading</span>
-       <small>sub title</small>
+        <small>sub title</small>
+
+        <hr />
+
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+        <ul class="list-unstyled">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+        <ul class="list-inline">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+
+        <code>
+            $('#thing').fadeToggle(1000);
+        </code>
+        <pre>
+            您若要執行jQuery的fade效果
+            請參考下列範例:
+        <code>
+           
+        
+            $('fieldset').hide();
+            $('#Button1').click(function () {
+            $('fieldset').fadeIn(1000);
+            });
+            $('#Reset1').click(function () {
+            $('fieldset').fadeOut(1000);
+            });
+            $('#btn').click(function () {
+            $('#thing').fadeToggle(1000);
+            });
+            function fadeShow() {
+            var n = Math.random();
+            $('#thing').fadeTo(300, n);
+            setTimeout("fadeShow()", "300");
+            }
+            fadeShow();
+                </code>
+        </pre>
+
+        <kbd>Ctrl+F4</kbd>
+
     </div>
     <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
