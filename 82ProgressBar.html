@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+    <style>
+      
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="progress">
+            <div class="progress-bar" style="width:83%">
+                <span>83% Complete</span>
+            </div>
+        </div>
+       
+        <div class="progress">
+            <div class="progress-bar progress-bar-danger" style="width:83%">
+                <span>83% Complete</span>
+            </div>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped" style="width:83%">
+                <span>83% Complete</span>
+            </div>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" style="width:83%">
+                <span>83% Complete</span>
+            </div>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-success active" style="width:83%">
+                <span>83% Complete</span>
+            </div>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-danger active" style="width:30%">
+                <span class="sr-only">30% Complete</span>
+            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-warning active" style="width:40%">
+                <span class="sr-only">70% Complete</span>
+            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-success active" style="width:30%">
+                <span class="sr-only">100% Complete</span>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-success active" id="test">
+                <span></span>
+            </div>
+        </div>
+
+
+    </div>
+    
+    
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script>
+        var a = 0;
+        function timer() {
+            a += 5;
+            $('#test').css({ 'width': a + '%' });
+            $('#test>span').text(a + "% Complete");
+
+            if (a < 100)
+                setTimeout(timer, 200);
+        }
+
+        timer();
+    </script>
+</body>
+</html>

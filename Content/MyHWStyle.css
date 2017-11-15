@@ -1,0 +1,73 @@
+﻿body {
+}
+h1, .h1{
+    color:red;
+}
+
+.HeaderFontColoer{
+
+    color:blue;
+}
+pre {
+ 
+  border-radius: 40px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color:#b8e1ff;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color:#ffdac0;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: white;
+    border: 2px solid red;
+    color: black;
+    font-weight:900;
+}
+
+.btn-Pink {
+  color: #fff;
+  background-color:pink;
+  border-color:hotpink;
+}
+
+
+.breadcrumb > li + li:before {
+  content: ">";
+}
+.breadcrumb > .active {
+  color: red;
+}
+
+
+.MyJumBack {
+    background-image:url('/images/main_head.jpg');
+    background-repeat:repeat;
+    background-position-y:-55px;
+  /*background-color:hotpink;*/
+}
+
+.MyJumBack h1,.MyJumBack .h1 {
+    color:white;
+    font-family:微軟正黑體;
+    text-shadow:5px 5px 5px black;
+    font-weight:900;
+}
+
+.MyJumBack p {
+    color:white;
+    font-family:微軟正黑體;
+    text-shadow:2px 2px 4px black;
+    font-weight:900;
+    font-size:30pt;
+}
+
+.MyJumBack  .btn{
+    color:white;
+    font-family:微軟正黑體;
+    text-shadow:2px 2px 3px black;
+    font-weight:900;
+    font-size:16pt;
+}

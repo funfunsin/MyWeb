@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="playerStyle.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <audio id="audio">
+        <source id="s" src="music\MV.mp3"  type="audio/mpeg" title="旺福-咖啡戀曲"  />
+    </audio>
+   
+    <div id="conPanel">
+        <select id="music" width="100%">
+            <option value="music\MV.mp3">旺福-咖啡戀曲</option>
+            <option value="music\noting.mp3">NOTHING'S GONNA CHANGE MY LOVE FOR YOU</option>
+            <option value="music\elysees.mp3">Champs-Elysees</option>
+            <option value="music\little.mp3">田馥甄-小幸運</option>
+            <option value="music\Right.mp3">Keren Ann-Right Now & Right Here</option>
+        </select>
+        <img class="line" src="images/line1.gif" />
+        <br /><br />
+        <span id="play">4</span>
+        <span id="stop"><</span>
+        <span id="prevsong">9</span>
+        <span id="prevtime">7</span>
+        <span id="nexttime">8</span>
+        
+        <span id="nextsong">:</span>
+        <span id="muted">V</span>
+        <span id="loop">q</span>
+        <span id="allloop">`</span>
+        <span id="random">s</span>
+        <br /><br />
+        <div id="settime" class="progress">
+            <div id="progress" class="progress-bar progress-bar-warning">
+                <span></span>
+            </div>
+        </div>
+        <br />
+        <img class="line" src="images/line2.gif" />
+        <div id="volume">
+            <label for="vol">Volume：</label>
+            <input id="vol" type="range" max="100" min="0" value="50" />
+        </div>
+        <img class="line" src="images/line1.gif" />
+        <div id="bottom">
+            <div id="duration">
+                00:00/00:00
+                
+            </div>
+            <span id="info2"></span>
+            <marquee id="info" width="100%">請按播放鍵~!!</marquee>
+        </div>
+    </div>
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="playerJS.js"></script>
+
+</body>
+</html>
