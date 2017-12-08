@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+    <style>
+      
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+            <input id="bookname" type="text" class="form-control" />
+            <input id="search" type="button" value="查詢" class="btn btn-primary" />
+        </div>
+        <div>
+            <table id="booklist" class="table tatable-hover">
+
+            </table>
+        </div>
+
+    </div>
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script>
+        $('#search').on('click',function(){
+            var url = "https://www.googleapis.com/books/v1/volumes?q=" + $('#bookname').val();
+            
+            $.getJSON(url, function (data) {
+                $('#booklist').empty();
+                //alert("s");
+                //alert(data.items.length);
+                $('#booklist').append('<tr><th>封面</th><th>書名</th><th>作者</th></tr>');
+                for (var i = 0; i < data.items.length; i++)
+                {
+                    
+                    var item = data.items[i];
+                   
+                    var tr = "<tr>";
+                    //li += "<a href='#'>";
+                    tr += "<td><img src='" + item.volumeInfo.imageLinks.smallThumbnail + "' width='70%' /></td>";
+                    tr += "<td><h2>" + item.volumeInfo.title + "</h2></td>";
+                    tr += "<td>" + item.volumeInfo.authors + "</td>";
+                    //li += "</a>";
+                    tr += "</tr>";
+                    //alert(li);
+                    $('#booklist').append(tr);
+                }
+            });
+        
+        });
+
+
+    </script>
+
+</body>
+</html>
